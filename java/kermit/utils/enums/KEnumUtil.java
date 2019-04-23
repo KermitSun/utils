@@ -1,7 +1,6 @@
 package kermit.utils.enums;
 
 import kermit.utils.exception.NotEnumException;
-import kermit.utils.exception.TranException;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
