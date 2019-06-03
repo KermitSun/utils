@@ -1,6 +1,4 @@
-package kermit.utils.verify;
-
-import com.sun.deploy.util.StringUtils;
+package kermit.utils.basic.verify;
 
 /**
  * @Date: 2019/4/2314:18

@@ -1,4 +1,4 @@
-package kermit.utils.enums;
+package kermit.utils.basic.enums;
 
 /**
  * @date: 2019/4/2312:54

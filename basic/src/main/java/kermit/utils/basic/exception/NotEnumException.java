@@ -1,4 +1,4 @@
-package kermit.utils.exception;
+package kermit.utils.basic.exception;
 
 /**
  * @Date: 2019/4/2313:49

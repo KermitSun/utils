@@ -1,6 +1,6 @@
-package kermit.utils.enums;
+package kermit.utils.basic.enums;
 
-import kermit.utils.exception.NotEnumException;
+import kermit.utils.basic.exception.NotEnumException;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

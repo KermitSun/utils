@@ -1,4 +1,4 @@
-package kermit.utils.copy;
+package kermit.utils.basic.copy;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
