@@ -1,0 +1,39 @@
+{
+  "package": "com.kermit",
+  "jdbc": {
+    "driver": "com.mysql.jdbc.Driver",
+    "url": "jdbc:mysql://",
+    "username": "",
+    "password": ""
+  },
+  "tableScan": ["t_test1","t_test2"],
+  "author": "Kermit",
+  "outPath": "D:/KGenerator/",
+  "config": [
+    {
+      "outPath": "${tableName}/dao",
+      "template": "dao.ft",
+      "fileName": "${tableName}Dao.java"
+    },{
+      "outPath": "${tableName}/dao/impl",
+      "template": "daoImpl.ft",
+      "fileName": "${tableName}DaoImpl.java"
+    },{
+      "outPath": "${tableName}/service",
+      "template": "service.ft",
+      "fileName": "${tableName}Service.java"
+    },{
+      "outPath": "${tableName}/service/impl",
+      "template": "serviceImpl.ft",
+      "fileName": "${tableName}ServiceImpl.java"
+    },{
+      "outPath": "${tableName}/mapper",
+      "template": "mapper.ft",
+      "fileName": "${tableName}Mapper.xml"
+    },{
+      "outPath": "${tableName}/model",
+      "template": "model.ft",
+      "fileName": "${tableName}Model.java"
+    }
+  ]
+}
