@@ -1,0 +1,19 @@
+package ${package}.dao;
+
+import java.util.List;
+import ${package}.model.${modelName}Model;
+
+/**
+* ${modelRemark}
+* @author ${author}
+* @date  ${now?datetime}
+*/
+public interface ${modelName}Dao{
+    List<${modelName}Model> queryList(${modelName}Model ${modelName?uncap_first});
+
+    int insert(${modelName}Model ${modelName?uncap_first});
+
+    int update(${modelName}Model ${modelName?uncap_first});
+    }
+
+

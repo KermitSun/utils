@@ -1,0 +1,36 @@
+package ${package}.model;
+
+import com.hshc.shc.ics.util.ContrastField;
+import java.io.Serializable;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.apache.ibatis.type.Alias;
+<#list packages as p>
+import ${p};
+</#list>
+
+/**
+ * ${modelRemark}实体</p>
+ * ${modelName}对应数据库表 ${tableName}
+ * @author ${author}
+ * @date  ${now?datetime}
+ */
+@Data
+@NoArgsConstructor
+@Alias("${modelName}Model")
+public class ${modelName}Model implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	<#list columns as item>
+    //${item.remark}
+	private ${item.typeName} ${item.fieldName};
+	
+	</#list>
+
+	@Override
+	public String toString() {
+		<#assign sign=false>
+		return "${modelName}Model [<#list columns as item><#if sign>,</#if>${item.fieldName}=" + ${item.fieldName} + "<#assign sign=true></#list>]";
+	}
+}

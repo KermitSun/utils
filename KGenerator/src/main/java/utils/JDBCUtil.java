@@ -1,4 +1,6 @@
-package kermit.utils.basic.jdbc;
+package utils;
+
+import entity.DB;
 
 import java.sql.*;
 
@@ -23,9 +25,9 @@ public class JDBCUtil {
      * @return
      * @throws SQLException
      */
-    public static Connection getConn(String driver, String url, String user, String password) throws SQLException{
-        initDriver(driver);
-        return DriverManager.getConnection(url, user, password);
+    public static Connection getConn(DB db) throws SQLException{
+        initDriver(db.getDriver());
+        return DriverManager.getConnection(db.getUrl(), db.getUsername(), db.getPassword());
     }
 
     /**
