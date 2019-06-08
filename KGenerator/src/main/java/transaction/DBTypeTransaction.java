@@ -13,7 +13,7 @@ public class DBTypeTransaction {
     private static String[] longs = new String[] { "SMALLINT", "MEDIUMINT", "BIGINT" };
     private static String[] strings = new String[] { "VARCHAR", "CHAR", "TEXT", "MEDIUMTEXT" };
     private static String[] ints = new String[] { "INTEGER","INT", "BIT", "BOOLEAN","TINYINT" };
-    private static String[] doubles = new String[] { "FLOAT", "DOUBLE", "DECIMAL" };
+    private static String[] bigdecimals = new String[] { "FLOAT", "DOUBLE", "DECIMAL" };
     private static String[] dates = new String[] { "DATE", "TIME", "DATETIME", "TIMESTAMP", "YEAR" };
 
     /**
@@ -32,9 +32,9 @@ public class DBTypeTransaction {
         } else if (Arrays.asList(ints).contains(dbType)) {
             rs.put("importPackage", "java.lang.Integer");
             rs.put("typeName", "Integer");
-        } else if (Arrays.asList(doubles).contains(dbType)) {
-            rs.put("importPackage", "java.lang.Double");
-            rs.put("typeName", "Double");
+        } else if (Arrays.asList(bigdecimals).contains(dbType)) {
+            rs.put("importPackage", "java.math.mathBigDecimal");
+            rs.put("typeName", "BigDecimal");
         } else if (Arrays.asList(dates).contains(dbType)) {
             rs.put("importPackage", "java.util.Date");
             rs.put("typeName", "Date");

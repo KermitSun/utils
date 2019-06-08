@@ -12,22 +12,24 @@ import java.sql.*;
 public class JDBCUtil {
     private JDBCUtil(){}
 
-    private static void initDriver(String driver){
-        try {
-            Class.forName(driver);
-        } catch (ClassNotFoundException e) {
-            throw new ExceptionInInitializerError(e);
-        }
-    }
-
     /**
      * 获取 Connetion
      * @return
      * @throws SQLException
      */
-    public static Connection getConn(DB db) throws SQLException{
-        initDriver(db.getDriver());
-        return DriverManager.getConnection(db.getUrl(), db.getUsername(), db.getPassword());
+    public static Connection getConn(DB db) throws SQLException, ClassNotFoundException {
+        try {
+            Class.forName(db.getDriver());
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        Connection connection = null;
+        try{
+            connection = DriverManager.getConnection(db.getUrl(), db.getUsername(), db.getPassword());
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        return connection;
     }
 
     /**
@@ -46,7 +48,7 @@ public class JDBCUtil {
      * 释放连接 Connection
      * @param conn
      */
-    private static void closeConnection(Connection conn) {
+    public static void closeConnection(Connection conn) {
         if(conn !=null) {
             try {
                 conn.close();
@@ -62,7 +64,7 @@ public class JDBCUtil {
      * 释放语句执行者 Statement
      * @param st
      */
-    private static void closeStatement(Statement st) {
+    public static void closeStatement(Statement st) {
         if(st !=null) {
             try {
                 st.close();
@@ -78,7 +80,7 @@ public class JDBCUtil {
      * 释放结果集 ResultSet
      * @param rs
      */
-    private static void closeResultSet(ResultSet rs) {
+    public static void closeResultSet(ResultSet rs) {
         if(rs !=null) {
             try {
                 rs.close();

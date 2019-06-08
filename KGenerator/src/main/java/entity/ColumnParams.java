@@ -10,7 +10,8 @@ import lombok.Data;
 @Data
 public class ColumnParams {
     private String columnName;
-    private String importPackage;
+    private String dbColumnName;
     private String typeName;
-    private String remark;
+    private String dbTypeName;
+    private String columnRemark;
 }

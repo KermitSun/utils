@@ -10,9 +10,8 @@ public class StrUtil {
     public StrUtil(String str){
         this.str = str;
     }
-    public StrUtil wipeTitle(String str){
-        int idx = str.indexOf("t_");
-        if(idx == 0){
+    public StrUtil wipeTitle(){
+        if(str.indexOf("t_") == 0){
             str = str.substring(2);
         }
         return this;

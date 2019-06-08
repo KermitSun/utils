@@ -15,8 +15,8 @@ import java.util.Map;
  */
 public class ParamsTrans {
     public static Map<String, String> trans(TableParams tableParams){
-        Map<String, String> tableMap = new HashMap();
-        tableMap.putAll(tableParams.getConfigParams());
+        /*Map<String, String> tableMap = new HashMap();
+        tableMap.putAll(tableParams.getParams());
         tableMap.put("tableName", tableParams.getName());
         tableMap.put("tableRemark", tableParams.getRemark());
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
@@ -28,6 +28,7 @@ public class ParamsTrans {
             columnMap.put("remark", column.getRemark());
             list.add(columnMap);
         }
-        return tableMap;
+        return tableMap;*/
+        return null;
     }
 }

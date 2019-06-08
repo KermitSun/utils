@@ -1,33 +1,30 @@
-package ${package}.dao.impl;
+package ${params.package}.modules.${tableName?uncap_first}.dao.impl;
 
+import ${params.package}.modules.${tableName?uncap_first}.dao.${tableName}Dao;
+import ${params.package}.modules.${tableName?uncap_first}.model.${tableName}Model;
 import java.util.List;
-import com.hshc.shc.ics.dao.CommonBaseDao;
-import ${package}.dao.${modelName}Dao;
-import ${package}.model.${modelName}Model;
-
+import ${params.package}.commons.BaseDao;
 import org.springframework.stereotype.Repository;
 
 /**
-* ${modelRemark}
-* @author ${author}
-* @date  ${now?datetime}
+* @Date: ${formatterTime}
+* @Author: ${params.author}
+* @Description: ${tableRemark} Dao层实现
 */
 @Repository
-public class ${modelName}DaoImpl extends CommonBaseDao implements ${modelName}Dao {
-
+public class ${tableName}DaoImpl extends BaseDao implements ${tableName}Dao {
     @Override
-    public List<${modelName}Model> queryList(${modelName}Model ${modelName?uncap_first}) {
-        return this.queryList("${package}.dao.${modelName}Mapper.queryList", ${modelName?uncap_first});
-    }
-
-
-    @Override
-    public int insert(${modelName}Model ${modelName?uncap_first}) {
-        return this.insert("${package}.dao.${modelName}Mapper.insert", ${modelName?uncap_first});
+    public List<${tableName}Model> queryList(${tableName}Model ${tableName?uncap_first}) {
+        return super.queryList("${params.package}.modules.${tableName?uncap_first}.dao.${tableName}Mapper.queryList", ${tableName?uncap_first});
     }
 
     @Override
-    public int update(${modelName}Model ${modelName?uncap_first}) {
-        return this.update("${package}.dao.${modelName}Mapper.update", ${modelName?uncap_first});
+    public int insert(${tableName}Model ${tableName?uncap_first}) {
+        return super.insert("${params.package}.modules.${tableName?uncap_first}.dao.${tableName}Mapper.insert", ${tableName?uncap_first});
+    }
+
+    @Override
+    public int update(${tableName}Model ${tableName?uncap_first}) {
+        return super.update("${params.package}.modules.${tableName?uncap_first}.dao.${tableName}Mapper.update", ${tableName?uncap_first});
     }
 }

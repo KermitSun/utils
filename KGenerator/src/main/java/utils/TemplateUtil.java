@@ -1,5 +1,6 @@
 package utils;
 
+import entity.TableParams;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -38,7 +39,7 @@ public class TemplateUtil {
      *@Author: Kermit Sun
      *@Description: 输出templateName文件
      */
-    public static void write(Template template, Map<String, String> params, FileWriter fw){
+    public static void write(Template template, TableParams params, FileWriter fw){
         try {
             template.process(params, fw);
         } catch (TemplateException e) {

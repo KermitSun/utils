@@ -1,4 +1,5 @@
 import entity.Config;
+import utils.BuildUtil;
 import utils.ConfigUtil;
 
 /**
@@ -8,8 +9,6 @@ import utils.ConfigUtil;
  */
 public class Main {
     public static void main(String[] args) {
-
+        BuildUtil.start();
     }
-
-
 }

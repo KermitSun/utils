@@ -2,19 +2,20 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="KGenerator" />
-        <module name="kExcel" />
         <module name="basic" />
+        <module name="kExcel" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="basic" target="1.8" />
-      <module name="kExcel" target="1.5" />
-      <module name="KGenerator" target="1.5" />
+      <module name="kExcel" target="8" />
+      <module name="KGenerator" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
